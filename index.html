@@ -3,7 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/webp" href="/favicon.webp" />
-
+    <link
+      rel="preload"
+      as="image"
+      href="/src/assets/images/home-bg-mobile.webp"
+      fetchpriority="high"
+      media="(max-width: 768px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/src/assets/images/home-bg.webp"
+      fetchpriority="high"
+      media="(min-width: 769px)"
+    />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="var(--background-color-dark)" />
 

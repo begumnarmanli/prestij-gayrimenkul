@@ -12,6 +12,7 @@ import { db } from "../../firebase";
 import { toggleFavorite } from "../../redux/auth/authSlice";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import "leaflet/dist/leaflet.css";
 import MapComponent from "../../components/MapComponent/MapComponent";
 import { neighborhoodCoords } from "../../data/neighborhoodCoords";
 import HeartIcon from "../../assets/icons/heart.svg?react";

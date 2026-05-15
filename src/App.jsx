@@ -1,15 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "leaflet/dist/leaflet.css";
-import HomePage from "./pages/HomePage/HomePage";
-import ListingsPage from "./pages/ListingsPage/ListingsPage";
-import AgentsPage from "./pages/AgentsPage/AgentsPage";
-import AuthPage from "./pages/AuthPage/AuthPage";
-import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import ListingDetailPage from "./pages/ListingDetailPage/ListingDetailPage";
-import Statistics from "./components/Statistics/Statistics";
+
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+const ListingsPage = lazy(() => import("./pages/ListingsPage/ListingsPage"));
+const AgentsPage = lazy(() => import("./pages/AgentsPage/AgentsPage"));
+const AuthPage = lazy(() => import("./pages/AuthPage/AuthPage"));
+const ProfilePage = lazy(() => import("./pages/ProfilePage/ProfilePage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
+const ListingDetailPage = lazy(() => import("./pages/ListingDetailPage/ListingDetailPage"));
+const Statistics = lazy(() => import("./components/Statistics/Statistics"));
 
 if (import.meta.env.PROD) {
   console.log = () => {};
@@ -20,17 +21,19 @@ if (import.meta.env.PROD) {
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/listings" element={<ListingsPage />} />
-        <Route path="/listings/:id" element={<ListingDetailPage />} />
-        <Route path="/agents" element={<AgentsPage />} />
-        <Route path="/login" element={<AuthPage />} />
-        <Route path="/register" element={<AuthPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/statistics" element={<Statistics />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <Suspense fallback={<div style={{ minHeight: "100vh" }} />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/listings" element={<ListingsPage />} />
+          <Route path="/listings/:id" element={<ListingDetailPage />} />
+          <Route path="/agents" element={<AgentsPage />} />
+          <Route path="/login" element={<AuthPage />} />
+          <Route path="/register" element={<AuthPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/statistics" element={<Statistics />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
       <ToastContainer
         position="top-right"
         autoClose={3000}
