@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
-import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
+import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore/lite";
 import { db } from "../../firebase";
 import { toggleFavorite } from "../../redux/auth/authSlice";
 import HeartIcon from "../../assets/icons/heart.svg?react";

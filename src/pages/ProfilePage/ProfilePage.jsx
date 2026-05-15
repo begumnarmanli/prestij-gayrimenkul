@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs } from "firebase/firestore/lite";
 import { db } from "../../firebase";
 import { logout } from "../../redux/auth/authSlice";
 import Header from "../../components/Header/Header";

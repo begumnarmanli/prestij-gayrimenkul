@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { doc, setDoc, deleteDoc } from "firebase/firestore";
+import { doc, setDoc, deleteDoc } from "firebase/firestore/lite";
 import { db } from "../../firebase";
 import { updateUser } from "../../redux/auth/authSlice";
 import { toast } from "react-toastify";

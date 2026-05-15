@@ -3,7 +3,7 @@ import { useForm, useWatch } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore/lite";
 import { auth, db } from "../../firebase";
 import { setCredentials } from "../../redux/auth/authSlice";
 import { yupResolver } from "@hookform/resolvers/yup";

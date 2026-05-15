@@ -7,7 +7,7 @@ import {
   updateDoc,
   arrayUnion,
   arrayRemove,
-} from "firebase/firestore";
+} from "firebase/firestore/lite";
 import { db } from "../../firebase";
 import { toggleFavorite } from "../../redux/auth/authSlice";
 import Header from "../../components/Header/Header";

@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useDispatch } from "react-redux";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore/lite";
 import { auth, db } from "../../firebase";
 import { setCredentials } from "../../redux/auth/authSlice";
 import CheckIcon from "../../assets/icons/check.svg?react";
