@@ -1,0 +1,247 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(38, 38, 38, 0.5);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 40px 20px;
+  width: 90%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn:hover .closeIcon {
+  color: var(--color-primary);
+}
+
+.closeIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-primary);
+  transition: color var(--transition);
+}
+
+.categoryBadge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--color-primary);
+  color: var(--color-primary);
+  border-radius: var(--radius-full);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.title {
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  color: var(--color-primary);
+  fill: var(--color-primary);
+}
+
+.ratingCount {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  margin-left: 4px;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.infoLabel {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray);
+}
+
+.infoValue {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+}
+
+.comment {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-primary);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.favoriteBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.favoriteBtn:hover {
+  background: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.heartIcon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+}
+
+.contactBtn {
+  flex: 1;
+  padding: 14px 24px;
+  background: var(--color-primary);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.contactBtn:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.location {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.isFav {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.isFav .heartIcon {
+  fill: var(--color-white);
+  stroke: var(--color-white);
+}
+
+@media (min-width: 768px) {
+  .modal {
+    padding: 30px 40px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal {
+    padding: 40px 40px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .rating {
+    margin-bottom: 18px;
+  }
+
+  .info {
+    justify-items: center;
+  }
+}

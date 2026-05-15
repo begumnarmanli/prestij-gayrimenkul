@@ -1,0 +1,15 @@
+{
+  "name": "Prestij Gayrimenkul - Gaziantep",
+  "short_name": "Prestij Emlak",
+  "description": "Gaziantep'in en prestijli emlak ve bölge analiz platformu.",
+  "icons": [
+    {
+      "src": "/favicon.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ],
+  "theme_color": "#1A2E5A",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

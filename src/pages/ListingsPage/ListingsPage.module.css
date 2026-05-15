@@ -1,0 +1,293 @@
+.page {
+  min-height: 100dvh;
+  background: var(--color-white);
+  flex: 1;
+  padding: 0 20px;
+}
+
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  padding-top: 60px;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-size: 28px;
+  font-weight: var(--font-weight-bold);
+  color: var(--background-color-dark);
+  margin-bottom: 36px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 46, 90, 0.6);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInOverlay 0.6s ease forwards;
+}
+
+.modal {
+  background: var(--background-color-dark);
+  border-radius: var(--radius-md);
+  padding: 40px 24px;
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: fadeInUpModal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.modalClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform var(--transition);
+}
+
+.modalClose:hover {
+  transform: scale(1.1);
+}
+
+.closeIcon {
+  width: 24px;
+  height: 24px;
+  color: rgba(180, 210, 255, 0.7);
+}
+
+.modalClose:hover .closeIcon {
+  color: var(--color-white);
+}
+
+.modalTitle {
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  margin: 0;
+}
+
+.modalText {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  color: rgba(180, 210, 255, 0.7);
+  text-align: center;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.modalBtnLogin {
+  flex: 1;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #3b8ddd, #1a5ca8);
+  color: var(--color-white);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.modalBtnLogin:hover {
+  opacity: 0.85;
+}
+
+.modalBtnRegister {
+  flex: 1;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: rgba(180, 210, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.modalBtnRegister:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+}
+
+.logoLetter {
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-size: 32px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-primary);
+  text-shadow:
+    0 1px 0 #2a6fad,
+    0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logoTextWrapper {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logoMainText {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: var(--color-primary);
+}
+
+.logoSubText {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--color-danger-light);
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+.noResults {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-gray);
+  text-align: center;
+  padding: 40px 0;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 0 32px;
+  }
+
+  .main {
+    padding: 32px 24px 60px;
+  }
+
+  .title {
+    font-size: 44px;
+    margin-bottom: 44px;
+  }
+
+  .modal {
+    max-width: 466px;
+    padding: 60px;
+    gap: 20px;
+  }
+
+  .modalText {
+    margin-bottom: 28px;
+    font-size: var(--font-size-base);
+  }
+
+  .modalActions {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .modalBtnLogin,
+  .modalBtnRegister {
+    flex: none;
+    width: 140px;
+    padding: 14px 0;
+  }
+
+  .list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page {
+    padding: 0 64px;
+  }
+
+  .list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .modal {
+    border-radius: 30px;
+    max-width: 437px;
+    width: 90%;
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 54px;
+    margin-top: 0;
+  }
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUpModal {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

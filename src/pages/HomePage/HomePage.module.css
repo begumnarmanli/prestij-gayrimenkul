@@ -1,0 +1,150 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding-top: 0;
+  background: var(--background-color-dark);
+}
+
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroCard {
+  border-radius: var(--radius-md);
+  padding: 20px 16px 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  max-width: 100vw;
+}
+
+.heroText {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 30px;
+  color: #b2d0f0;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  margin-top: 55px;
+  text-align: center;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.imageWrap {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroIllustration {
+  width: 100%;
+  border-radius: var(--radius-md);
+}
+
+.houseSvg {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .heroCard {
+    border-radius: 60px;
+    width: 100%;
+    padding: 25px 23px 32px;
+  }
+
+  .heroText {
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+
+  .title {
+    font-size: 64px;
+    letter-spacing: 3px;
+    line-height: 1.1;
+    margin-top: 80px;
+    margin-bottom: 40px;
+  }
+
+  .imageWrap {
+    border-radius: 60px;
+  }
+
+  .houseSvg {
+    height: 500px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .pageContainer {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page {
+    flex: 1;
+    min-height: 0;
+    padding: 0px 64px;
+    overflow: hidden;
+  }
+
+  .heroCard {
+    flex-shrink: 0;
+    border-radius: 60px;
+    padding: 16px 32px 0px;
+  }
+
+  .heroText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 54px;
+    color: #b2d0f0;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+  }
+
+  .imageWrap {
+    flex: 1;
+    min-height: 0;
+    border-radius: 60px;
+  }
+
+  .heroIllustration {
+    width: 100%;
+    height: 100%;
+  }
+
+  .houseSvg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

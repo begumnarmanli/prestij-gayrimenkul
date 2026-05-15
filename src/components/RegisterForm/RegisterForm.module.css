@@ -1,0 +1,112 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px 44px 14px 18px;
+  width: 100%;
+  transition: border-color var(--transition);
+}
+
+.input::placeholder {
+  color: var(--color-gray);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.inputError {
+  border-color: var(--color-error);
+}
+
+.inputSuccess {
+  border-color: var(--color-success);
+}
+
+.iconSuccess {
+  position: absolute;
+  right: 14px;
+  width: 20px;
+  height: 20px;
+  color: var(--color-success);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.iconError {
+  position: absolute;
+  right: 14px;
+  width: 15px;
+  height: 15px;
+  color: var(--color-error);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.iconBeforeEye {
+  right: 44px;
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.eyeIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-gray);
+}
+
+.errorMsg {
+  font-family: var(--font-family);
+  font-size: 12px;
+  color: var(--color-error);
+}
+
+.btn {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 14px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity var(--transition);
+}
+
+.btn:hover {
+  opacity: 0.9;
+}

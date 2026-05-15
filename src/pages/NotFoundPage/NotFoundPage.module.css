@@ -1,0 +1,153 @@
+.pageContainer {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorWrapper {
+  width: 100%;
+  height: 712px;
+  max-width: 335px;
+  background-color: var(--background-color-dark);
+  border-radius: 60px;
+  padding: 80px 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.numberWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.number {
+  font-size: 120px;
+  font-weight: var(--font-weight-extra-bold);
+  color: var(--color-white);
+  line-height: 1;
+}
+
+.logoCircle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a2e5a, #0f1c3a);
+  border: 2px solid rgba(59, 141, 221, 0.4);
+  box-shadow: 0 8px 32px rgba(59, 141, 221, 0.3);
+}
+
+.logoLetter {
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-primary);
+  text-shadow:
+    0 1px 0 #2a6fad,
+    0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.message {
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  margin: 0;
+}
+
+.homeButton {
+  background-color: var(--color-white);
+  color: var(--background-color-dark);
+  border: none;
+  border-radius: 30px;
+  padding: 12px 40px;
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.homeButton:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.02);
+}
+
+@media screen and (min-width: 768px) {
+  .errorWrapper {
+    max-width: 704px;
+    padding: 100px 40px;
+  }
+
+  .number {
+    font-size: 300px;
+    font-weight: bolder;
+  }
+
+  .logoIcon {
+    width: 160px;
+    height: 160px;
+  }
+
+  .logoLetter {
+    font-size: 56px;
+  }
+
+  .message {
+    font-size: 24px;
+  }
+
+  .homeButton {
+    font-size: 16px;
+    padding: 14px 30px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .pageContainer {
+    padding: 0 90px;
+  }
+
+  .errorWrapper {
+    max-width: 1216px;
+    height: 654px;
+  }
+
+  .logoIcon {
+    width: 200px;
+    height: 200px;
+  }
+
+  .logoLetter {
+    font-size: 72px;
+  }
+}

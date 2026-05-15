@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --color-primary: #3b8ddd;
+  --color-primary-hover: #2a78c5;
+  --color-primary-light: #f0f7ff;
+  --color-border-light: rgba(59, 141, 221, 0.1);
+  --color-white: #ffffff;
+  --background-color: #ffffff;
+  --background-color-dark: #1a2e5a;
+  --color-primary-medium: #93c5fd;
+  --color-danger-light: #fef2f2;
+
+  --color-error: #ef4444;
+  --color-success: #10b981;
+  --color-border: rgba(59, 141, 221, 0.15);
+  --color-gray: rgba(59, 141, 221, 0.7);
+
+  .Toastify__toast--success {
+    background-color: var(--background-color-dark);
+    color: var(--color-white);
+  }
+
+  .Toastify__progress-bar--success {
+    background: var(--color-primary-medium);
+  }
+
+  .Toastify__toast--success .Toastify__toast-icon svg {
+    fill: var(--color-primary-medium);
+  }
+
+  --font-family: "Manrope", sans-serif;
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-lg: 18px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --radius-sm: 15px;
+  --radius-md: 20px;
+  --radius-img: 30px;
+  --radius-full: 40px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-8: 32px;
+
+  --transition: 0.5s ease-in-out;
+  --shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background-color: var(--background-color);
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+html:has(body.menu-open) {
+  overflow: hidden;
+}
