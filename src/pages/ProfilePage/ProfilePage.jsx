@@ -10,6 +10,7 @@ import EditUserModal from "../../components/EditUserModal/EditUserModal";
 import ListingCard from "../../components/ListingCard/ListingCard";
 import ChevronDownIcon from "../../assets/icons/chevron-down.svg?react";
 import styles from "./ProfilePage.module.css";
+import { Helmet } from "react-helmet-async";
 
 export default function ProfilePage() {
   const [showLogoutModal, setShowLogoutModal] = useState(false);
@@ -70,6 +71,13 @@ export default function ProfilePage() {
 
   return (
     <div className={styles.pageContainer}>
+      <Helmet>
+        <title>Profilim | Prestij Gayrimenkul</title>
+        <meta
+          name="description"
+          content="Favori ilanlarınızı ve hesap bilgilerinizi yönetin."
+        />
+      </Helmet>
       <Header variant="light" />
 
       <div className={styles.page}>

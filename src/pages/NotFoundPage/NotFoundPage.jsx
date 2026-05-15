@@ -1,11 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./NotFoundPage.module.css";
+import { Helmet } from "react-helmet-async";
 
 export default function NotFoundPage() {
   const navigate = useNavigate();
 
   return (
     <div className={styles.pageContainer}>
+      <Helmet>
+        <title>Sayfa Bulunamadı | Prestij Gayrimenkul</title>
+        <meta name="description" content="Aradığınız sayfa bulunamadı." />
+      </Helmet>
       <div className={styles.content}>
         <div className={styles.errorWrapper}>
           <div className={styles.errorContent}>

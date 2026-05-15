@@ -20,6 +20,7 @@ import ListingCard from "../../components/ListingCard/ListingCard";
 import Pagination from "../../components/Pagination/Pagination";
 import CloseIcon from "../../assets/icons/close.svg?react";
 import styles from "./ListingsPage.module.css";
+import { Helmet } from "react-helmet-async";
 
 export default function ListingsPage() {
   const dispatch = useDispatch();
@@ -78,6 +79,13 @@ export default function ListingsPage() {
 
   return (
     <div className={styles.pageContainer}>
+      <Helmet>
+        <title>İlan Bul | Prestij Gayrimenkul</title>
+        <meta
+          name="description"
+          content="Gaziantep'te satılık ve kiralık daire, villa, arsa ilanları. Filtreleyerek aradığınız evi bulun."
+        />
+      </Helmet>
       <Header variant="light" authenticated={isAuthenticated} />
       <div className={styles.page}>
         <main className={styles.main}>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -13,10 +13,11 @@ import { toggleFavorite } from "../../redux/auth/authSlice";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import "leaflet/dist/leaflet.css";
-import MapComponent from "../../components/MapComponent/MapComponent";
+const MapComponent = lazy(() => import("../../components/MapComponent/MapComponent"));
 import { neighborhoodCoords } from "../../data/neighborhoodCoords";
 import HeartIcon from "../../assets/icons/heart.svg?react";
 import styles from "./ListingDetailPage.module.css";
+import { Helmet } from "react-helmet-async";
 
 export default function ListingDetailPage() {
   const { id } = useParams();
@@ -86,6 +87,13 @@ export default function ListingDetailPage() {
 
   return (
     <div className={styles.pageContainer}>
+      <Helmet>
+        <title>{title} | Prestij Gayrimenkul</title>
+        <meta
+          name="description"
+          content={`${neighborhood}, ${city_district} - ${formatPrice(price)} - ${area} m²`}
+        />
+      </Helmet>
       <Header variant="light" />
       <div className={styles.page}>
         <div className={styles.imgWrap}>
@@ -165,18 +173,24 @@ export default function ListingDetailPage() {
             <div className={styles.mapSection}>
               <h2 className={styles.sectionTitle}>Konum</h2>
               <div className={styles.mapWrapper}>
-                {coords ? (
-                  <MapComponent
-                    listings={[
-                      { ...listing, lat: coords.lat, lng: coords.lng },
-                    ]}
-                    center={[coords.lat, coords.lng]}
-                    zoom={15}
-                  />
-                ) : (
-                  <p className={styles.noCoords}>Konum bilgisi bulunamadı.</p>
-                )}
-              </div>
+  {coords ? (
+    <Suspense fallback={
+      <div className={styles.mapPlaceholder}>
+        <p>Harita yükleniyor...</p>
+      </div>
+    }>
+      <MapComponent
+        listings={[
+          { ...listing, lat: coords.lat, lng: coords.lng },
+        ]}
+        center={[coords.lat, coords.lng]}
+        zoom={15}
+      />
+    </Suspense>
+  ) : (
+    <p className={styles.noCoords}>Konum bilgisi bulunamadı.</p>
+  )}
+</div>
             </div>
           </div>
 

@@ -11,7 +11,7 @@ import ahmetImg from "../../assets/images/ahmet.webp";
 import elifImg from "../../assets/images/elif.webp";
 import canerImg from "../../assets/images/caner.webp";
 import selinImg from "../../assets/images/selin.webp";
-
+import { Helmet } from "react-helmet-async";
 const agentImages = {
   "ahmet.webp": ahmetImg,
   "elif.webp": elifImg,
@@ -55,6 +55,13 @@ export default function AgentsPage() {
 
   return (
     <div className={styles.pageContainer}>
+      <Helmet>
+        <title>Danışmanlarımız | Prestij Gayrimenkul</title>
+        <meta
+          name="description"
+          content="Gaziantep emlak piyasasının uzman danışmanlarıyla tanışın. Profesyonel ekibimiz size en iyi hizmeti sunar."
+        />
+      </Helmet>
       <div className={styles.page}>
         <Header variant="light" authenticated={isAuthenticated} />
 

@@ -3,10 +3,18 @@ import { useLocation } from "react-router-dom";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
 import styles from "./AuthPage.module.css";
+import { Helmet } from "react-helmet-async";
 
 function Logo() {
   return (
     <div className={styles.logoBlock}>
+      <Helmet>
+        <title>Giriş Yap | Prestij Gayrimenkul</title>
+        <meta
+          name="description"
+          content="Prestij Gayrimenkul hesabınıza giriş yapın."
+        />
+      </Helmet>
       <div className={styles.logoMarkWrap}>
         <div className={styles.logoMark}>
           <span className={styles.logoLetter}>PG</span>
